@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Turnos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Resumen</th>
+      <th>Descripcion</th>
+      <th>Hora ingreso</th>
+      <th>Hora atencion</th>
+      <th>Hora finalizacion</th>
+      <th>Usuario</th>
+      <th>Comentario atencion</th>
+      <th>Estado</th>
+      <th>Agencia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turnos.each do |turno| %>
+      <tr>
+        <td><%= turno.nombre %></td>
+        <td><%= turno.resumen %></td>
+        <td><%= turno.descripcion %></td>
+        <td><%= turno.hora_ingreso %></td>
+        <td><%= turno.hora_atencion %></td>
+        <td><%= turno.hora_finalizacion %></td>
+        <td><%= turno.usuario %></td>
+        <td><%= turno.comentario_atencion %></td>
+        <td><%= turno.estado %></td>
+        <td><%= turno.agencia %></td>
+        <td><%= link_to 'Show', turno %></td>
+        <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
+        <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Turno', new_turno_path %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Evaluaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Turno</th>
+      <th>Pregunta1</th>
+      <th>Resultado1</th>
+      <th>Pregunta2</th>
+      <th>Resultado2</th>
+      <th>Pregunta3</th>
+      <th>Resultado3</th>
+      <th>Pregunta4</th>
+      <th>Resultado4</th>
+      <th>Comentario</th>
+      <th>Resultado total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @evaluaciones.each do |evaluacion| %>
+      <tr>
+        <td><%= evaluacion.turno %></td>
+        <td><%= evaluacion.pregunta1 %></td>
+        <td><%= evaluacion.resultado1 %></td>
+        <td><%= evaluacion.pregunta2 %></td>
+        <td><%= evaluacion.resultado2 %></td>
+        <td><%= evaluacion.pregunta3 %></td>
+        <td><%= evaluacion.resultado3 %></td>
+        <td><%= evaluacion.pregunta4 %></td>
+        <td><%= evaluacion.resultado4 %></td>
+        <td><%= evaluacion.comentario %></td>
+        <td><%= evaluacion.resultado_total %></td>
+        <td><%= link_to 'Show', evaluacion %></td>
+        <td><%= link_to 'Edit', edit_evaluacion_path(evaluacion) %></td>
+        <td><%= link_to 'Destroy', evaluacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Evaluacion', new_evaluacion_path %>
