@@ -1,6 +1,6 @@
 class Usuario < ActiveRecord::Base
-	has_many : logins
-  	has_many : turnos
+	has_many :logins
+  	has_many :turnos
   
   	belongs_to :agencia
 
@@ -9,7 +9,6 @@ class Usuario < ActiveRecord::Base
 	validates :correo, presence:true, uniqueness:true, format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :login, presence:true, uniqueness: true
 	validates :estado, presence:true
-	validates :clave, presence:true
 	validates :rol, presence:true
 
 	has_secure_password
@@ -25,8 +24,9 @@ class Usuario < ActiveRecord::Base
         UserMailer.updated(id).deliver
     end
 
-	def self.authenticate(email = '', clave = '')
+	def self.authenticate(email = '', password = '')
   		user = find_by('correo = :correo or login = :correo', correo: email)
+  		user && user.authenticate(password)
  	end
 
 end

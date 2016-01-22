@@ -10,8 +10,6 @@
       <th>Correo</th>
       <th>Login</th>
       <th>Estado</th>
-      <th>Clave</th>
-      <th>Password digest</th>
       <th>Agencia</th>
       <th>Rol</th>
       <th colspan="3"></th>
@@ -25,9 +23,7 @@
         <td><%= usuario.apellido %></td>
         <td><%= usuario.correo %></td>
         <td><%= usuario.login %></td>
-        <td><%= usuario.estado %></td>
-        <td><%= usuario.clave %></td>
-        <td><%= usuario.password_digest %></td>
+        <td><%= usuario.estado %></td>       
         <td><%= usuario.agencia %></td>
         <td><%= usuario.rol %></td>
         <td><%= link_to 'Show', usuario %></td>
@@ -40,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Usuario', new_usuario_path %>
+<%= link_to 'New Usuario', new_usuario_path, class:'btn btn-primary' %>

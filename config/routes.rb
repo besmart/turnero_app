@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :sesiones #agrega ruta de sesiones
   resources :evaluaciones
   resources :turnos
   resources :logins
   resources :usuarios
   resources :agencias
+
+  root 'agencias#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

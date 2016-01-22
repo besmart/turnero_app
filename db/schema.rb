@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116002355) do
+ActiveRecord::Schema.define(version: 20160122222410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,12 +45,9 @@ ActiveRecord::Schema.define(version: 20160116002355) do
     t.integer  "estado"
     t.string   "sesion"
     t.integer  "clase_usuario"
-    t.integer  "usuario_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  add_index "logins", ["usuario_id"], name: "index_logins_on_usuario_id", using: :btree
 
   create_table "turnos", force: :cascade do |t|
     t.string   "nombre"
@@ -76,19 +73,20 @@ ActiveRecord::Schema.define(version: 20160116002355) do
     t.string   "correo"
     t.string   "login"
     t.integer  "estado"
-    t.string   "clave"
     t.string   "password_digest"
     t.integer  "agencia_id"
     t.string   "rol"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "login_id"
   end
 
   add_index "usuarios", ["agencia_id"], name: "index_usuarios_on_agencia_id", using: :btree
+  add_index "usuarios", ["login_id"], name: "index_usuarios_on_login_id", using: :btree
 
   add_foreign_key "evaluaciones", "turnos"
-  add_foreign_key "logins", "usuarios"
   add_foreign_key "turnos", "agencias"
   add_foreign_key "turnos", "usuarios"
   add_foreign_key "usuarios", "agencias"
+  add_foreign_key "usuarios", "logins"
 end
