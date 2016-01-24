@@ -28,10 +28,10 @@
         <td><%= turno.hora_ingreso %></td>
         <td><%= turno.hora_atencion %></td>
         <td><%= turno.hora_finalizacion %></td>
-        <td><%= turno.usuario %></td>
+        <td><%= turno.usuario.login %></td>
         <td><%= turno.comentario_atencion %></td>
         <td><%= turno.estado %></td>
-        <td><%= turno.agencia %></td>
+        <td><%= turno.agencia%></td>
         <td><%= link_to 'Show', turno %></td>
         <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
         <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>

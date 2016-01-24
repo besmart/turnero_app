@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :usuario_id %><br>
-    <%= f.text_field :usuario_id %>
+    <%= f.collection_select :usuario_id, Usuario.all, :id, :login %>
   </div>
   <div class="field">
     <%= f.label :comentario_atencion %><br>
