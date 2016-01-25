@@ -5,6 +5,6 @@ class Login < ActiveRecord::Base
 	validates :sesion, presence:true
 	validates :clase_usuario, presence:true
 
-
+	
 
 end
