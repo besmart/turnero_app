@@ -1,4 +1,7 @@
+require 'csv'
 class Evaluacion < ActiveRecord::Base
+    include Export
+
     belongs_to :turno
 
   	validates :pregunta1, presence: true
@@ -12,5 +15,11 @@ class Evaluacion < ActiveRecord::Base
   	validates :comentario, presence: true
 	validates :resultado_total, presence: true
 	
+	def puntaje_total
+		resultado_total = (resultado1 + resultado2 + resultado3 + resultado4) / 4
+	end
 
+	def self.methods_to_export
+		super + ['puntaje_total']
+	end
 end

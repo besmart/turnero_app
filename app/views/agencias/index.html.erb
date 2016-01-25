@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Agencias</h1>
+<h4>Agencias</h4>
 
-<table>
+<table class="table table-striped table-condensed table-hover "> 
   <thead>
     <tr>
       <th>Nombre</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= agencia.nombre %></td>
         <td><%= agencia.direccion %></td>
-        <td><%= link_to 'Show', agencia %></td>
-        <td><%= link_to 'Edit', edit_agencia_path(agencia) %></td>
-        <td><%= link_to 'Destroy', agencia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', agencia %></td>
+        <td><%= link_to 'Editar', edit_agencia_path(agencia) %></td>
+        <td><%= link_to 'Eliminar', agencia, method: :delete, data: { confirm: 'Está seguro de eliminar el registro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Agencia', new_agencia_path, class:'btn' %>
+<%= link_to 'Adicione Agencia', new_agencia_path, class:'btn btn-primary' %>
+

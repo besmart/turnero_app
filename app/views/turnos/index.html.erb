@@ -31,7 +31,7 @@
         <td><%= turno.usuario.login %></td>
         <td><%= turno.comentario_atencion %></td>
         <td><%= turno.estado %></td>
-        <td><%= turno.agencia%></td>
+        <td><%= turno.agencia.nombre %></td>
         <td><%= link_to 'Show', turno %></td>
         <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
         <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>

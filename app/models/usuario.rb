@@ -6,6 +6,7 @@ class Usuario < ActiveRecord::Base
 
   	validates :nombre, presence: true
 	validates :apellido, presence: true
+	validates :password, presence: true, length: {minimum: 6,maximum: 12}
 	validates :correo, presence:true, uniqueness:true, format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :login, presence:true, uniqueness: true
 	validates :estado, presence:true

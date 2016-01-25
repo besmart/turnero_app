@@ -1,7 +1,10 @@
 <%= form_for(@agencia) do |f| %>
   <% if @agencia.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@agencia.errors.count, "error") %> prohibited this agencia from being saved:</h2>
+       <h2><%= t('errors.template.header', model: 'Agencia', count: @agenciia.errors.count)%></h2>
+       <!--  <h2><%= pluralize(@agencia.errors.count, "error") %> prohibited this agencia from being saved:</h2> -->
+
+       <!--la linea anterior sirve para manejar los errores en español y los valida usando archivo ubicado dentro de la gema rails-i18n -->
 
       <ul>
       <% @agencia.errors.full_messages.each do |message| %>
@@ -11,15 +14,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+<div class="row">  
+  <div class="col-md-4 col-sm-6 col-xs-12"> <!-- el 4 indica que tenga 3 columnas en el formulario    
+     cuando se visualiza en el explorador por que boostrap maneja 12 columnas 3*4=12-->
+    <div class="form-group">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="form-group">
+        <%= f.label :direccion %><br>
+        <%= f.text_field :direccion, class: 'form-control' %>
+    </div>
+  </div>   
+</div>
+
+<br />
+<!-- <div class="actions"> -->
+<div class="form-group">
+   <%= f.submit 'Guardar', class: 'btn btn-primary' %>  
+<!--    <%= f.submit %> -->
+ </div>
 <% end %>

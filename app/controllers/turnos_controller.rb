@@ -6,6 +6,12 @@ class TurnosController < ApplicationController
   # GET /turnos.json
   def index
     @turnos = Turno.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Turno.to_csv }
+      format.json
+    end
   end
 
   # GET /turnos/1

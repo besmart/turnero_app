@@ -2,7 +2,7 @@
 
 <p>
   <strong>Turno:</strong>
-  <%= @evaluacion.turno %>
+  <%= @evaluacion.turno_id %>
 </p>
 
 <p>
@@ -55,5 +55,5 @@
   <%= @evaluacion.resultado_total %>
 </p>
 
-<%= link_to 'Edit', edit_evaluacion_path(@evaluacion) %> |
-<%= link_to 'Back', evaluaciones_path %>
+<%= link_to 'Editar', edit_evaluacion_path(@evaluacion) %> |
+<%= link_to 'Atrás', evaluaciones_path %>

@@ -3,7 +3,7 @@ class SesionesController < ApplicationController
   end
 
   def create
-    usuario = Usuario.authenticate(sesion_params[:mail], sesion_params[:clave])
+    usuario = Usuario.authenticate(sesion_params[:mail], sesion_params[:password])
     if usuario
       cookies[:user_id] = usuario.id #guarda en un cokkie el id del usuario
       redirect_to root_path #lleva a la raiz del sitio
@@ -20,6 +20,6 @@ class SesionesController < ApplicationController
 
   private
   def sesion_params
-    params.require(:sesion).permit(:mail, :clave)
+    params.require(:sesion).permit(:mail, :password)
   end
-end
+end 

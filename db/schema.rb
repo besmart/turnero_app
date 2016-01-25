@@ -78,15 +78,12 @@ ActiveRecord::Schema.define(version: 20160122222410) do
     t.string   "rol"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "login_id"
   end
 
   add_index "usuarios", ["agencia_id"], name: "index_usuarios_on_agencia_id", using: :btree
-  add_index "usuarios", ["login_id"], name: "index_usuarios_on_login_id", using: :btree
 
   add_foreign_key "evaluaciones", "turnos"
   add_foreign_key "turnos", "agencias"
   add_foreign_key "turnos", "usuarios"
   add_foreign_key "usuarios", "agencias"
-  add_foreign_key "usuarios", "logins"
 end

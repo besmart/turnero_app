@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Evaluaciones</h1>
+<h4>Evaluaciones</h4>
 
-<table>
+<table class="table table-striped table-condensed table-hover "> 
   <thead>
     <tr>
       <th>Turno</th>
@@ -23,7 +23,7 @@
   <tbody>
     <% @evaluaciones.each do |evaluacion| %>
       <tr>
-        <td><%= evaluacion.turno %></td>
+        <td><%= evaluacion.turno_id %></td>
         <td><%= evaluacion.pregunta1 %></td>
         <td><%= evaluacion.resultado1 %></td>
         <td><%= evaluacion.pregunta2 %></td>
@@ -34,9 +34,9 @@
         <td><%= evaluacion.resultado4 %></td>
         <td><%= evaluacion.comentario %></td>
         <td><%= evaluacion.resultado_total %></td>
-        <td><%= link_to 'Show', evaluacion %></td>
-        <td><%= link_to 'Edit', edit_evaluacion_path(evaluacion) %></td>
-        <td><%= link_to 'Destroy', evaluacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', evaluacion %></td>
+        <td><%= link_to 'Editar', edit_evaluacion_path(evaluacion) %></td>
+        <td><%= link_to 'Eliminar', evaluacion, method: :delete, data: { confirm: 'Está seguro de eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +44,5 @@
 
 <br>
 
-<%= link_to 'New Evaluacion', new_evaluacion_path, class:'btn' %>
+<%= link_to 'Nueva Evaluacion', new_evaluacion_path, class:'btn' %>
+<%= link_to 'Descargar csv', evaluaciones_path(format: :csv), class: 'btn btn-primary'%>

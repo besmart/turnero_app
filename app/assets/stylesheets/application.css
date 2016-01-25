@@ -13,3 +13,81 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+	background: #34d989;
+}
+
+.menu{
+	margin-left: 40px;
+	color: white;
+}
+.menu a{
+	color: white;
+}
+
+
+.content{
+	margin-left:  20px;
+	background: white;
+	margin-top: 20px;
+	margin-right:  20px;
+	padding: 30px;
+	border-radius: 8px;
+	min-height: 400px;
+}
+
+.table{
+	border-collapse: collapse;
+	width: 100%;
+}
+.table th, .table td {
+	border-bottom: 1px solid #add;
+	padding: 5px;
+}
+
+.table tbody tr:hover{
+	background:  #f5f5f5;
+}
+
+.btn{
+	background: #34d989;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.btn:hover{
+	background: darkgreen;
+}
+
+.btn:visited{
+	color: white;
+}
+
+/* body{
+* 	background: steelgreen;
+* }
+
+* .menu{
+* 	margin-left: 40px;
+* 	color: red;
+* }
+*
+*.menu a{
+*	color: red;
+*}
+*
+*.content{
+*	margin-left: 20px;
+*	margin-right: 20px;
+*	margin-top: 20px;
+*	background: blue;
+*	padding: 30px;
+*	border-radius: 8px;
+*	min-height: 300px;
+}*/		

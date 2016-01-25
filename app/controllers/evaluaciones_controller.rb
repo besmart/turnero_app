@@ -6,6 +6,13 @@ class EvaluacionesController < ApplicationController
   # GET /evaluaciones.json
   def index
     @evaluaciones = Evaluacion.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Evaluacion.to_csv }
+      format.json
+    end
+
   end
 
   # GET /evaluaciones/1
