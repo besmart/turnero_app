@@ -11,47 +11,70 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :resumen %><br>
-    <%= f.text_field :resumen %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
-  </div>
-  <div class="field">
-    <%= f.label :hora_ingreso %><br>
-    <%= f.datetime_select :hora_ingreso %>
-  </div>
-  <div class="field">
-    <%= f.label :hora_atencion %><br>
-    <%= f.datetime_select :hora_atencion %>
-  </div>
-  <div class="field">
-    <%= f.label :hora_finalizacion %><br>
-    <%= f.datetime_select :hora_finalizacion %>
-  </div>
-  <div class="field">
-    <%= f.label :usuario_id %><br>
-    <%= f.collection_select :usuario_id, Usuario.all, :id, :login %>
-  </div>
-  <div class="field">
-    <%= f.label :comentario_atencion %><br>
-    <%= f.text_area :comentario_atencion %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.number_field :estado %>
-  </div>
-  <div class="field">
-    <%= f.label :agencia_id %><br>
-    <%= f.collection_select :agencia_id, Agencia.all, :id, :nombre %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>  
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :nombre %><br>
+        <%= f.text_field :nombre, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :resumen %><br>
+        <%= f.text_field :resumen, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :descripcion %><br>
+        <%= f.text_area :descripcion, class: 'form-control' %>
+      </div>
+    </div>   
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :hora_ingreso %><br>
+        <%= f.datetime_select :hora_ingreso, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :hora_atencion %><br>
+        <%= f.datetime_select :hora_atencion, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :hora_finalizacion %><br>
+        <%= f.datetime_select :hora_finalizacion, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :usuario_id %><br>
+        <%= f.collection_select :usuario_id, Usuario.all, :id, :login, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :comentario_atencion %><br>
+        <%= f.text_area :comentario_atencion, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :estado %><br>
+        <%= f.number_field :estado, class: 'form-control' %>
+      </div>
+    </div>  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="form-group">
+        <%= f.label :agencia_id %><br>
+        <%= f.collection_select :agencia_id, Agencia.all, :id, :nombre, class: 'form-control' %>
+      </div>
+    </div>  
+ </div>
+ <br />   
+    <div class="form-group">
+      <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+    </div>  
 <% end %>

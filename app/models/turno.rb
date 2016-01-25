@@ -1,3 +1,4 @@
+require 'csv'
 class Turno < ActiveRecord::Base
   	include Export
 
